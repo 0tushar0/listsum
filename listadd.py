@@ -4,7 +4,8 @@ class ListNode:
          self.next = None
 
 class Solution:
-    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+    @staticmethod
+    def addTwoNumbers(l1: ListNode, l2: ListNode) -> ListNode:
         ptr = l1
         ptr2 = l2
         sol = s = ListNode(None)
@@ -39,3 +40,14 @@ class Solution:
                 break
         
         return sol
+
+n = ListNode(5)
+m = ListNode(5)
+
+loop = Solution.addTwoNumbers(m,n)
+
+while loop:
+    print(str(loop.val), end = " ")
+    if loop.next != None:
+        print(" -> ", end = " ")
+    loop = loop.next
